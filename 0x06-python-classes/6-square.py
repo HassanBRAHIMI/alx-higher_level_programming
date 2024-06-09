@@ -5,14 +5,10 @@
 class Square:
     """""square class"""
 
-    def __init__(self, size):
+    def __init__(self, size=0, position=(0, 0)):
         """"defining attrib size"""
-        if not type(size) is int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -29,6 +25,22 @@ class Square:
         else:
             self.__size = size
 
+    @property
+    def position(self):
+        """getter of the class"""
+        return self.__position
+
+    @position.setter
+    def position(self, position):
+        """setter of the position in the class"""
+        if (not isinstance(position, tuple) or
+            not all(isinstance(num, int) for num in position)
+            or not all(value >= 0 for value in position)
+                or len(position) > 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
+
     def area(self):
         """"calculate the are of the square"""
         return self.__size * self.__size
@@ -42,6 +54,8 @@ class Square:
         j = 0
         while i < self.__size:
             j = 0
+            for k in range(self.__position[0]):
+                print(" ", end="")
             while j < self.__size:
                 print("#", end="")
                 j += 1
