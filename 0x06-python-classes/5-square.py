@@ -5,7 +5,7 @@
 class Square:
     """""square class"""
 
-    def __init__(self, size=0):
+    def __init__(self, size):
         """"defining attrib size"""
         if not type(size) is int:
             raise TypeError("size must be an integer")
@@ -32,3 +32,18 @@ class Square:
     def area(self):
         """"calculate the are of the square"""
         return self.__size * self.__size
+
+    def my_print(self):
+        """prints the square"""
+        if self.__size == 0:
+            print("")
+            return
+        i = 0
+        j = 0
+        while i < self.__size:
+            j = 0
+            while j < self.__size:
+                print("#", end="")
+                j += 1
+            print("")
+            i += 1
