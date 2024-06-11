@@ -5,10 +5,13 @@
 class Rectangle:
     """"the class that we will work with"""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """"the init method"""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -66,3 +69,4 @@ class Rectangle:
     def __del__(self):
         """do smtg while i delete the rectangle"""
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
