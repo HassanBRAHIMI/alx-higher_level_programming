@@ -54,7 +54,7 @@ class Rectangle:
         """it will return the informal string of the class"""
         if self.__height == 0 or self.__width == 0:
             return 0
+        rectangle_str = []
         for i in range(self.__height):
-            for j in range(self.__height):
-                print("#", end="")
-            print("")
+            rectangle_str.append("#" * self.__width)
+        return "\n".join(rectangle_str)
