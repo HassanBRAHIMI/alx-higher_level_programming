@@ -6,6 +6,7 @@ class Rectangle:
     """"the class that we will work with"""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """"the init method"""
@@ -59,7 +60,7 @@ class Rectangle:
             return ""
         rectangle_str = []
         for i in range(self.__height):
-            rectangle_str.append("#" * self.__width)
+            rectangle_str.append(str(self.print_symbol) * self.__width)
         return "\n".join(rectangle_str)
 
     def __repr__(self):
