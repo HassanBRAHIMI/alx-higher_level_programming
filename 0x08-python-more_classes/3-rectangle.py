@@ -53,7 +53,7 @@ class Rectangle:
     def __str__(self):
         """it will return the informal string of the class"""
         if self.__height == 0 or self.__width == 0:
-            return 0
+            return ""
         rectangle_str = []
         for i in range(self.__height):
             rectangle_str.append("#" * self.__width)
