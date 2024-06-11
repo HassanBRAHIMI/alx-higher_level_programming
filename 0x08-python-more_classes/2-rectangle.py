@@ -49,3 +49,12 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return (self.__height + self.__width) * 2
+
+    def __str__(self):
+        """it will return the informal string of the class"""
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        for i in range(self.__height):
+            for j in range(self.__height):
+                print("#", end="")
+            print("")
