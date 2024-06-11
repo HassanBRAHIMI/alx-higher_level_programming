@@ -58,3 +58,7 @@ class Rectangle:
         for i in range(self.__height):
             rectangle_str.append("#" * self.__width)
         return "\n".join(rectangle_str)
+
+    def __repr__(self):
+        """it will return the official line for creating an instance"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
