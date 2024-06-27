@@ -79,7 +79,7 @@ class Rectangle(Base):
                 )
             )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """a variadic method to update the instance's attributes"""
         # am a have to check the validity of args
         # then am a have to assigne the attributes to a list
@@ -92,6 +92,10 @@ class Rectangle(Base):
                         self.id = arg
                     else:
                         setattr(self, attributes[i], arg)
+        elif kwargs and len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     @staticmethod
     def setter_validation(value, name_of_the_attr):
