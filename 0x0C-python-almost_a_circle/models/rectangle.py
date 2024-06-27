@@ -79,6 +79,20 @@ class Rectangle(Base):
                 )
             )
 
+    def update(self, *args):
+        """a variadic method to update the instance's attributes"""
+        # am a have to check the validity of args
+        # then am a have to assigne the attributes to a list
+        # and iterate over it assigning each value to it's corresponded attr
+        if args and len(args) > 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    if attributes[i] == 'id':
+                        self.id = arg
+                    else:
+                        setattr(self, attributes[i], arg)
+
     @staticmethod
     def setter_validation(value, name_of_the_attr):
         if type(value) is not int:
