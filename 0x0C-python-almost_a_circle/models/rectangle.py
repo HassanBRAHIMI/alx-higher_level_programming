@@ -23,6 +23,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """setter for the width"""
+        self.setter_validation(width, "width")
         self.__width = width
 
     @property
@@ -33,6 +34,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """setter of the height"""
+        self.setter_validation(height, "height")
         self.__height = height
 
     @property
@@ -43,6 +45,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """setter for x"""
+        self.setter_validation(x, "x")
         self.__x = x
 
     @property
@@ -53,4 +56,16 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """setter for y"""
+        self.setter_validation(y, "y")
         self.__y = y
+
+    @staticmethod
+    def setter_validation(value, name_of_the_attr):
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name_of_the_attr))
+        elif name_of_the_attr == "x" or name_of_the_attr == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name_of_the_attr))
+        else:
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(name_of_the_attr))
