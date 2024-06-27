@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""
+    a rectangle module
+"""
 from models.base import Base
-"""a rectangle module"""
 
 
 class Rectangle(Base):
@@ -12,12 +14,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         """getter for the width"""
         return self.__width
-    
+
     @width.setter
     def width(self, width):
         """setter for the width"""
@@ -27,7 +29,7 @@ class Rectangle(Base):
     def height(self):
         """getter of the height"""
         return self.__width
-    
+
     @height.setter
     def height(self, height):
         """setter of the height"""
@@ -37,11 +39,12 @@ class Rectangle(Base):
     def x(self):
         """getter for x"""
         return self.__x
-    
+
     @x.setter
     def x(self, x):
         """setter for x"""
         self.__x = x
+
     @property
     def y(self):
         """getter for y"""
