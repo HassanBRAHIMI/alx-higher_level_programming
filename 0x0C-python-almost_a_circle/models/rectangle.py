@@ -59,6 +59,10 @@ class Rectangle(Base):
         self.setter_validation(y, "y")
         self.__y = y
 
+    def area(self):
+        """an area method"""
+        return (self.__height * self.__width)
+
     @staticmethod
     def setter_validation(value, name_of_the_attr):
         if type(value) is not int:
