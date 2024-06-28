@@ -35,4 +35,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """it should return the pythonic way of representing a json string"""
+        if not json_string or len(json_string) == 0:
+            return []
         return json.loads(json_string)
