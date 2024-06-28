@@ -97,6 +97,15 @@ class Rectangle(Base):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
+    def to_dictionary(self):
+        """return a dictionary representation"""
+        empty_dic = {}
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for attr in attributes:
+            if hasattr(self, attr):
+                empty_dic[attr] = getattr(self, attr)
+        return empty_dic
+
     @staticmethod
     def setter_validation(value, name_of_the_attr):
         if type(value) is not int:
