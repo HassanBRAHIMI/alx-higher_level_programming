@@ -46,6 +46,6 @@ class Base:
             the attributes setted
         """
         from models.rectangle import Rectangle
-        dummy = Rectangle(10, 10, 10, 10, 10)
-        dummy.update(dictionary)
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
         return dummy
