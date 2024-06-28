@@ -31,3 +31,8 @@ class Base:
             else:
                 list_of_dicts = [obj.to_dictionary() for obj in list_objs]
                 labes.write(cls.to_json_string(list_of_dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """it should return the pythonic way of representing a json string"""
+        return json.loads(json_string)
