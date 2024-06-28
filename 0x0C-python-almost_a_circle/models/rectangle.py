@@ -82,7 +82,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """a variadic method to update the instance's attributes"""
         # am a have to check the validity of args
-        # then am a have to assigne the attributes to a list
+        # then am a have to assign the attributes to a list
         # and iterate over it assigning each value to it's corresponded attr
         if args and len(args) > 0:
             attributes = ['id', 'width', 'height', 'x', 'y']
