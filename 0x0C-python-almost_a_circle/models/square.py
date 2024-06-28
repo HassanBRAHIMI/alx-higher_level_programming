@@ -37,6 +37,15 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
+    def to_dictionary(self):
+        """return a dictionary representation"""
+        empty_dic = {}
+        attributes = ['id', 'size', 'x', 'y']
+        for attr in attributes:
+            if hasattr(self, attr):
+                empty_dic[attr] = getattr(self, attr)
+        return empty_dic
+
     def __str__(self):
         """str method"""
         return (
