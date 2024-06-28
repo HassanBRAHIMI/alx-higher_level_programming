@@ -38,3 +38,14 @@ class Base:
         if not json_string or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+            it will return an instance of the class with all
+            the attributes setted
+        """
+        from models.rectangle import Rectangle
+        dummy = Rectangle(10, 10, 10, 10, 10)
+        dummy.update(dictionary)
+        return dummy

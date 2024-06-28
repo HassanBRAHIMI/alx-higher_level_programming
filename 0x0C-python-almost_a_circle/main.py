@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-""" 16-main """
+""" 17-main """
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
 
-    list_input = [
-        {'id': 89, 'width': 10, 'height': 4}, 
-        {'id': 7, 'width': 1, 'height': 7}
-    ]
-    list_output = Rectangle.from_json_string(None)
+    r1 = Rectangle(3, 5, 1)
+    r1_dictionary = r1.to_dictionary()
+    r2 = Rectangle.create(**r1_dictionary)
+    print(r1)
+    print(r2)
+    print(r1 is r2)
+    print(r1 == r2)
